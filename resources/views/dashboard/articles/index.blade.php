@@ -33,7 +33,7 @@
                 @foreach ($articles as $article)
                   <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $article->title }}</td>
+                    <td>{{ Str::limit($article->title, 50, '...') }}</td>
                     <td>{{ $article->category->name }}</td>
                     <td>
                       <a href="/dashboard/articles/{{ $article->slug }}" class="badge badge-info">

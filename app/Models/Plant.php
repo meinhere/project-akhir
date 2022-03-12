@@ -21,4 +21,9 @@ class Plant extends Model
     {
         return $this->belongsToMany(Tool::class);
     }
+
+    public function price()
+    {
+        return $this->hasOne(Price::class);
+    }
 }

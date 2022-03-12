@@ -8,7 +8,7 @@
     </div>
     <form action="/artikel" class="form-inline d-flex form-search">
       <input class="form-control me-sm-2 input-search" type="search"
-        placeholder="Cari berdasarkan nama artikel, isi artikel, dan kategori" aria-label="Search" name="search"
+        placeholder="Cari berdasarkan nama artikel atau isi artikel" aria-label="Search" name="search"
         value="{{ request('search') }}">
       <button class="btn btn-outline-success btn-search" type="submit">
         <i class="fa fa-search"></i>
@@ -21,22 +21,22 @@
         <div class="row mt-3">
           <div class="col-12 col-lg-7">
             <div class="card bg-dark text-white">
-              @if ($articles[0]->image)
-                <img src="{{ asset('storage/' . $articles[0]->image) }}" class="img-thumbnail"
-                  alt="{{ $articles[0]->title }}">
+              @if ($newArticle[0]->image)
+                <img src="{{ asset('storage/' . $newArticle[0]->image) }}" class="img-thumbnail"
+                  alt="{{ $newArticle[0]->title }}">
               @else
-                <img src="img/artikel/1.jpg" class="card-img" alt="{{ $articles[0]->title }}">
+                <img src="img/artikel/1.jpg" class="card-img" alt="{{ $newArticle[0]->title }}">
               @endif
               <div class="card-img-overlay">
-                <h2 class="card-title"><a href="/artikel/{{ $articles[0]->slug }}"
+                <h2 class="card-title"><a href="/artikel/{{ $newArticle[0]->slug }}"
                     class="text-white text-decoration-none text-uppercase">
-                    {{ $articles[0]->title }}</a></h2>
+                    {{ $newArticle[0]->title }}</a></h2>
               </div>
             </div>
           </div>
           <div class="col-12 col-lg-5">
             <div class="row article-populer">
-              @foreach ($articles->skip(1)->take(5) as $article)
+              @foreach ($articles->take(5) as $article)
                 <div class="card mb-3 card-populer w-100">
                   <div class="row g-0">
                     <div class="col-4">

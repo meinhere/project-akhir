@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TanamanController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardUserController;
@@ -43,6 +44,10 @@ Route::get('/kategori/{category:slug}', [CategoryController::class, 'show']);
 
 Route::get('/jenis-tanaman', [TanamanController::class, 'index']);
 Route::get('/alat-perkebunan', [TanamanController::class, 'alat']);
+Route::get('/harga-pasaran', [TanamanController::class, 'harga']);
+
+Route::get('/services/langkah-awal', [ServiceController::class, 'langkahAwal']);
+Route::get('/services/cara-pengobatan', [ServiceController::class, 'caraPengobatan']);
 
 Route::get('/dashboard/articles/checkSlug', [DashboardArtikelController::class, 'checkSlug'])->middleware('petani');
 Route::resource('/dashboard/articles', DashboardArtikelController::class)->middleware('petani');

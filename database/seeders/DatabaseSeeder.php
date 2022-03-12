@@ -9,7 +9,9 @@ use App\Models\Service;
 use App\Models\Footer;
 use App\Models\Plant;
 use App\Models\PlantCategory;
+use App\Models\PlantsTools;
 use App\Models\Tool;
+use App\Models\Price;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -162,6 +164,8 @@ class DatabaseSeeder extends Seeder
             'detail' => 'Semua jenis buah-buahan yang ada, berada disini.'
         ]);
 
+        PlantsTools::factory(12)->create();
+
         Tool::create([
             'name' => 'Cetok',
             'image' => '1.jpg'
@@ -177,6 +181,27 @@ class DatabaseSeeder extends Seeder
         Tool::create([
             'name' => 'Cangkul',
             'image' => '4.jpg'
+        ]);
+
+        Price::create([
+            'plant_id' => 1,
+            'harga_lama' => 6000,
+            'harga_baru' => 8000,
+        ]);
+        Price::create([
+            'plant_id' => 2,
+            'harga_lama' => 5000,
+            'harga_baru' => 4500,
+        ]);
+        Price::create([
+            'plant_id' => 3,
+            'harga_lama' => 20000,
+            'harga_baru' => 22000,
+        ]);
+        Price::create([
+            'plant_id' => 4,
+            'harga_lama' => 8000,
+            'harga_baru' => 7000,
         ]);
     }
 }

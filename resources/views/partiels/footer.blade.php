@@ -36,7 +36,7 @@
     <!---->
   </div>
   <div class="text-center py-3 copyright">
-    <span><strong>RESERVED BY</strong> <i class="text-danger">&copy;</i> <cite>JagoKebun</cite>
+    <span><strong>RESERVED BY</strong> &copy; {{ date('Y') }} <cite>JagoKebun</cite>
       Community</span>
   </div>
 </footer>

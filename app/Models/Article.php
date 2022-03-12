@@ -20,16 +20,6 @@ class Article extends Model
             fn ($query, $search) =>
             $query->where('title', 'like', '%' . $search . '%')->orWhere('body', 'like', '%' . $search . '%')
         );
-
-        $query->when(
-            $filters['category'] ?? false,
-            fn ($query, $search) =>
-            $query->whereHas(
-                'category',
-                fn ($query, $category) =>
-                $query->where('name', $category)
-            )
-        );
     }
 
     public function category()

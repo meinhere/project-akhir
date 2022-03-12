@@ -32,7 +32,7 @@
               @auth
                 <ul class="nav main-nav ms-auto">
                   <li class="nav-link dropdown mt-2">
-                    <a href="#" class="dropdown-toggle text-decoration-none" id="navbarDropdown" role="button"
+                    <a href="" class="dropdown-toggle text-decoration-none" id="navbarDropdown" role="button"
                       data-bs-toggle="dropdown" aria-expanded="false">
                       Selamat datang, {{ auth()->user()->name }}
                     </a>

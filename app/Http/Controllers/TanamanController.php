@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Plant;
 use App\Models\Tool;
 use App\Models\PlantsTools;
+use App\Models\Price;
 use App\Models\Footer;
 
 class TanamanController extends Controller
@@ -31,5 +31,16 @@ class TanamanController extends Controller
         ];
 
         return view('tanaman.alat', $data);
+    }
+
+    public function harga()
+    {
+        $data = [
+            'title' => 'JagoKebun . Harga Pasaran',
+            'prices' => Price::all(),
+            'footers' => Footer::all(),
+        ];
+
+        return view('tanaman.harga', $data);
     }
 }

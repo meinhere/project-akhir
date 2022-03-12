@@ -7,6 +7,7 @@ use Illuminate\Pagination\Paginator as PaginationPaginator;
 use Illuminate\Support\ServiceProvider;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
 
         Gate::define('admin', function (User $user) {
             return $user->role == 'Admin';
+        });
+
+        Blade::directive('convert', function ($money) {
+            return "<?php echo number_format($money, 0, ',', '.'); ?>";
         });
     }
 }

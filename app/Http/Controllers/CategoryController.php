@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Category;
 use App\Models\Footer;
 
@@ -14,10 +15,10 @@ class CategoryController extends Controller
         $data = [
             'title' => 'JagoKebun . ' . $category->name,
             'articles' => $category->article,
-            'category' => $category->name,
+            'newArticles' => Article::latest()->filter(request(['search']))->get(),
+            'category' => $category,
             'categories' => Category::whereNotIn('name', [$category->name])->get(),
             'footers' => Footer::all()
-
         ];
         return view('artikel.kategori', $data);
     }

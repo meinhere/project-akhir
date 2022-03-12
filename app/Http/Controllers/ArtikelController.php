@@ -13,6 +13,7 @@ class ArtikelController extends Controller
     $data = [
       "title" => "JagoKebun . Artikel",
       'articles' => Article::latest()->filter(request(['search']))->paginate(14)->withQueryString(),
+      'newArticle' => Article::latest()->take(1)->get(),
       'footers' => Footer::all()
     ];
     return view('artikel.index', $data);
@@ -24,7 +25,7 @@ class ArtikelController extends Controller
       'title' => 'JagoKebun . Artikel : ' . $article->title,
       'article' => $article,
       'categories' => Category::all(),
-      'articles' => Article::latest()->get(),
+      'articles' => Article::where('category_id', $article->category->id)->filter(request(['search']))->get(),
       'footers' => Footer::all()
     ];
     return view('artikel.detail', $data);

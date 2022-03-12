@@ -9,7 +9,7 @@
     <li class="sidebar-header">MAIN NAVIGATION</li>
     <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
       <a href="/dashboard">
-        <div class="d-flex">
+        <div class="d-grid">
           <i class="zmdi zmdi-view-dashboard"></i>
           <span>Dashboard</span>
         </div>
@@ -17,15 +17,15 @@
     </li>
     <li class="{{ Request::is('dashboard/articles*') ? 'active' : '' }}">
       <a href="/dashboard/articles">
-        <div class="d-flex">
-          <i class="zmdi zmdi-book"></i>
+        <div class="d-grid">
+          <i class="zmdi zmdi-book mr-3"></i>
           <span>Artikel</span>
         </div>
       </a>
     </li>
     <li>
       <a href="profile.html">
-        <div class="d-flex">
+        <div class="d-grid">
           <i class="zmdi zmdi-comment-alt-text"></i>
           <span>Halaman Chat</span>
         </div>
@@ -36,7 +36,7 @@
       <li class="sidebar-header">ADMINISTRATOR</li>
       <li class="{{ Request::is('dashboard/users*') ? 'active' : '' }}">
         <a href="/dashboard/users">
-          <div class="d-flex">
+          <div class="d-grid">
             <i class="zmdi zmdi-accounts"></i>
             <span>Data User</span>
           </div>
@@ -44,15 +44,15 @@
       </li>
       <li>
         <a href="profile.html">
-          <div class="d-flex">
-            <i class="zmdi zmdi-apps"></i>
+          <div class="d-grid">
+            <i class="zmdi zmdi-apps mr-3"></i>
             <span>List Service</span>
           </div>
         </a>
       </li>
       <li class="{{ Request::is('dashboard/categories*') ? 'active' : '' }}">
         <a href="/dashboard/categories">
-          <div class="d-flex">
+          <div class="d-grid">
             <i class="zmdi zmdi-label"></i>
             <span>Kategori</span>
           </div>

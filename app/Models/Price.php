@@ -5,20 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PlantsTools extends Model
+class Price extends Model
 {
     use HasFactory;
 
-    protected $table = 'plants_tools';
     protected $guarded = ['id'];
-    protected $with = ['plant', 'tool'];
+    protected $with = ['plant'];
 
     public function plant()
     {
         return $this->belongsTo(Plant::class);
-    }
-    public function tool()
-    {
-        return $this->belongsTo(Tool::class);
     }
 }

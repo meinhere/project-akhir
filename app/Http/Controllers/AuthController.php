@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Footer;
 use Illuminate\Support\Facades\Auth;
+use PHPUnit\Framework\MockObject\Rule\Parameters;
 
 class AuthController extends Controller
 {
@@ -62,13 +63,13 @@ class AuthController extends Controller
     return redirect('/login')->with('success', 'Registrasi berhasill, silahkan login');
   }
 
-  public function registerPetani()
-  {
-    $data = [
-      "title" => "JagoKebun . Halaman Daftar Petani"
-    ];
-    return view('auth.registerPetani', $data);
-  }
+  // public function registerPetani()
+  // {
+  //   $data = [
+  //     "title" => "JagoKebun . Halaman Daftar Petani"
+  //   ];
+  //   return view('auth.registerPetani', $data);
+  // }
 
   public function logout(Request $request)
   {

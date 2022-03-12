@@ -83,7 +83,7 @@ button {
     align-items: flex-end;
 }
 .login-btn {
-    padding-top: 3px;
+    padding-top: 2px;
     cursor: pointer;
     width: 120px;
     height: 30px;
@@ -132,7 +132,8 @@ button {
     transition: 0.3s;
     line-height: 3.24;
 }
-.links__item:hover {
+.links__item:hover,
+.links__item.active {
     color: #058501;
 }
 
