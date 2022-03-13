@@ -10,7 +10,9 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TanamanController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\DashboardPlantController;
 use App\Http\Controllers\DashboardArtikelController;
+use App\Http\Controllers\DashboardServiceController;
 use App\Http\Controllers\DashboardCategoryController;
 
 /*
@@ -49,9 +51,14 @@ Route::get('/harga-pasaran', [TanamanController::class, 'harga']);
 Route::get('/services/langkah-awal', [ServiceController::class, 'langkahAwal']);
 Route::get('/services/cara-pengobatan', [ServiceController::class, 'caraPengobatan']);
 
-Route::get('/dashboard/articles/checkSlug', [DashboardArtikelController::class, 'checkSlug'])->middleware('petani');
-Route::resource('/dashboard/articles', DashboardArtikelController::class)->middleware('petani');
+Route::middleware('petani')->group(function () {
+  Route::get('/dashboard/articles/checkSlug', [DashboardArtikelController::class, 'checkSlug']);
+  Route::resource('/dashboard/articles', DashboardArtikelController::class);
+});
 
-Route::resource('/dashboard/categories', DashboardCategoryController::class)->middleware('admin');
-Route::resource('/dashboard/users', DashboardUserController::class)->middleware('admin');
-Route::resource('/dashboard/users', DashboardUserController::class)->middleware('admin');
+Route::middleware('admin')->group(function () {
+  Route::resource('/dashboard/categories', DashboardCategoryController::class);
+  Route::resource('/dashboard/users', DashboardUserController::class);
+  Route::resource('/dashboard/services', DashboardServiceController::class);
+  Route::resource('/dashboard/plants', DashboardPlantController::class);
+});

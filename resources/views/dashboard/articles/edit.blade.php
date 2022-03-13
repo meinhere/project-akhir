@@ -31,7 +31,7 @@
               @enderror
             </div>
             <div class="form-group">
-              <label for="kategori">Kategory</label>
+              <label for="kategori">Kategori</label>
               <select name="category_id" id="kategori" class="form-control @error('category_id') is-invalid @enderror">
                 @foreach ($categories as $category)
                   @if (old('category_id', $article->category_id) == $category->id)

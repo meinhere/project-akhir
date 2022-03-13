@@ -12,7 +12,7 @@
             <div class="form-group">
               <label for="title">Nama Kategori</label>
               <input type="text" class="form-control @error('name') is-invalid @enderror" id="title" name="name"
-                placeholder="Masukkan judul artikel" value="{{ old('name') }}" autofocus>
+                placeholder="Masukkan nama kategori" value="{{ old('name') }}" autofocus>
               @error('name')
                 <div class="invalid-feedback">
                   {{ $message }}
@@ -22,7 +22,7 @@
             <div class="form-group">
               <label for="slug">Slug</label>
               <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug"
-                placeholder="Masukkan slug artikel" value="{{ old('slug') }}" readonly>
+                placeholder="Masukkan slug kategori" value="{{ old('slug') }}" readonly>
               @error('slug')
                 <div class=" invalid-feedback">
                   {{ $message }}

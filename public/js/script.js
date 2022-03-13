@@ -26,9 +26,10 @@ $(window).scroll(function () {
 });
 
 // Dropdown Menu Action
-$(document).ready(function () {
-    $(".dropdown-toggle").on("click", function () {
-        $(".dropdown-toggle").toggleClass("show");
-        $(".dropdown-menu").toggleClass("show");
-    });
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+
+dropdownToggle.addEventListener("click", function () {
+    dropdownToggle.classList.toggle("show");
+    dropdownMenu.classList.toggle("show");
 });

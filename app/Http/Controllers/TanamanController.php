@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plant;
 use App\Models\Tool;
-use App\Models\PlantsTools;
+use App\Models\PlantTool;
 use App\Models\Price;
 use App\Models\Footer;
 
@@ -26,7 +26,7 @@ class TanamanController extends Controller
         $data = [
             'title' => 'JagoKebun . Alat Perkebunan',
             'tools' => Tool::all(),
-            'plants_tools' => PlantsTools::all(),
+            'plants_tools' => PlantTool::all(),
             'footers' => Footer::all(),
         ];
 

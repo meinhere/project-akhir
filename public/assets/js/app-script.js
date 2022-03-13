@@ -56,6 +56,9 @@ $(function () {
             $("html, body").animate({ scrollTop: 0 }, 600);
             return false;
         });
+
+        // Select 2 Function
+        $(".select2-form").select2();
     });
 
     $(function () {
@@ -150,30 +153,31 @@ $(function () {
 });
 
 // Function Sluggable
-const title = document.querySelector('#title');
-const slug = document.querySelector('#slug');
+const title = document.querySelector("#title");
+const slug = document.querySelector("#slug");
 
-title.addEventListener('change', function() {
-  fetch('/dashboard/articles/checkSlug?title=' + title.value)
-    .then(response => response.json())
-    .then(data => slug.value = data.slug)
+title.addEventListener("change", function () {
+    fetch("/dashboard/articles/checkSlug?title=" + title.value)
+        .then((response) => response.json())
+        .then((data) => (slug.value = data.slug));
 });
 
-document.addEventListener('trix-file-accept', function(e) {
-  e.preventDefault();
+// Trix File Remove Function
+document.addEventListener("trix-file-accept", function (e) {
+    e.preventDefault();
 });
 
 // Function Image Preview
 function previewImage() {
-    const image = document.querySelector('#image');
-    const imagePreview = document.querySelector('.img-preview');
+    const image = document.querySelector("#image");
+    const imagePreview = document.querySelector(".img-preview");
 
-    image.style.display = 'block';
+    image.style.display = "block";
 
-    const oFReader = new FileReader;
+    const oFReader = new FileReader();
     oFReader.readAsDataURL(image.files[0]);
 
-    oFReader.onload = function(oFREvent) {
+    oFReader.onload = function (oFREvent) {
         imagePreview.src = oFREvent.target.result;
-    }
+    };
 }

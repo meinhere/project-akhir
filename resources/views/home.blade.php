@@ -15,7 +15,7 @@
             <a href="/{{ $service->slug }}" class="text-decoration-none">
               <div class="service--item" tabindex="0">
                 <div class="service--item__icon">
-                  <img src="{{ URL('/img/services/' . $service->gambar) }}" alt="{{ $service->name }}"
+                  <img src="{{ asset('storage/' . $service->gambar) }}" alt="{{ $service->name }}"
                     class="rounded-circle">
                 </div>
                 <div class="service--item__details">
@@ -40,7 +40,7 @@
                 <a href="/services/{{ $service->slug }}" class="text-decoration-none">
                   <div class="category-container--content--item" style="order: 0">
                     <div class="category-container--content--item__icon">
-                      <img src="{{ URL('/img/services/' . $service->gambar) }}" alt="{{ $service->name }}"
+                      <img src="{{ asset('storage/' . $service->gambar) }}" alt="{{ $service->name }}"
                         class="rounded-circle">
                     </div>
                     <div class="category-container--content--item__details">

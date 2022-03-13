@@ -651,10 +651,9 @@ body.bg-theme15 {
 	display: inline-block;
 	text-transform: uppercase;
 	position: relative;
-    top: 3px;
 	font-weight: 400;
 	text-align: center;
-	line-height:50px;
+	line-height:40px;
 }
 
 .logo-icon{
@@ -1713,7 +1712,7 @@ label {
 
 .form-control:focus{
   background-color: rgba(0,0,0,.2);
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.45)
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.45);
 }
 
 .form-control-rounded {

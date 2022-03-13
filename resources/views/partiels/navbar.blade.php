@@ -32,20 +32,27 @@
               @auth
                 <ul class="nav main-nav ms-auto">
                   <li class="nav-link dropdown mt-2">
-                    <a href="" class="dropdown-toggle text-decoration-none" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="dropdown-toggle text-decoration-none" role="button" aria-expanded="false">
                       Selamat datang, {{ auth()->user()->name }}
                     </a>
-                    <ul class="dropdown-menu py-0" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu dropdown-menu-macos mx-0 shadow">
+                      <li class="text-center">
+                        <span class="text-muted fw-bold" style="font-size: 0.8em">Navigasi
+                          Menu</span>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
                       <li>
                         <span class="dropdown-item">
-                          <i class="fa fa-user"></i>
-                          {{ auth()->user()->email }}</a>
+                          <i class="fa fa-user me-1" style="font-size: 1.1em"></i>
+                          {{ auth()->user()->email }}
                         </span>
                       </li>
                       @if (auth()->user()->role != 'User')
                         <li>
-                          <a href="/dashboard" class="dropdown-item"><i class="fa fa-dashboard"></i> Dashboard</a>
+                          <a href="/dashboard" class="dropdown-item">
+                            <i class="fa fa-dashboard"></i> Dashboard</a>
                         </li>
                       @endif
                       <li>

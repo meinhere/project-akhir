@@ -9,7 +9,7 @@ use App\Models\Service;
 use App\Models\Footer;
 use App\Models\Plant;
 use App\Models\PlantCategory;
-use App\Models\PlantsTools;
+use App\Models\PlantTool;
 use App\Models\Tool;
 use App\Models\Price;
 use Illuminate\Database\Seeder;
@@ -62,43 +62,43 @@ class DatabaseSeeder extends Seeder
         Service::create([
             'name' => 'Chat dengan Petani',
             'slug' => 'chat-dengan-petani',
-            'gambar' => 'icon1.jpg',
+            'gambar' => 'service-images/icon1.jpg',
             'jenis_service' => 1
         ]);
         Service::create([
             'name' => 'Jenis Tanaman',
             'slug' => 'jenis-tanaman',
-            'gambar' => 'icon2.jpg',
+            'gambar' => 'service-images/icon2.jpg',
             'jenis_service' => 1
         ]);
         Service::create([
             'name' => 'Alat Perkebunan',
             'slug' => 'alat-perkebunan',
-            'gambar' => 'icon3.jpg',
+            'gambar' => 'service-images/icon3.jpg',
             'jenis_service' => 1
         ]);
         Service::create([
             'name' => 'Harga Pasaran',
             'slug' => 'harga-pasaran',
-            'gambar' => 'icon4.jpg',
+            'gambar' => 'service-images/icon4.jpg',
             'jenis_service' => 1
         ]);
         Service::create([
             'name' => 'Langkah Awal',
             'slug' => 'langkah-awal',
-            'gambar' => 'service1.jpg',
+            'gambar' => 'service-images/service1.jpg',
             'jenis_service' => 2
         ]);
         Service::create([
             'name' => 'Cara Pengobatan',
             'slug' => 'cara-pengobatan',
-            'gambar' => 'service2.jpg',
+            'gambar' => 'service-images/service2.jpg',
             'jenis_service' => 2
         ]);
         Service::create([
             'name' => 'Siklus Tanah',
             'slug' => 'siklus-tanah',
-            'gambar' => 'service3.jpg',
+            'gambar' => 'service-images/service3.jpg',
             'jenis_service' => 2
         ]);
 
@@ -164,7 +164,7 @@ class DatabaseSeeder extends Seeder
             'detail' => 'Semua jenis buah-buahan yang ada, berada disini.'
         ]);
 
-        PlantsTools::factory(12)->create();
+        // PlantTool::factory(12)->create();
 
         Tool::create([
             'name' => 'Cetok',

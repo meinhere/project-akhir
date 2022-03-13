@@ -7,15 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Templates CSS -->
-  <link rel="icon" href="{{ asset('/img/favicon.ico') }}" type="image/x-icon">
-  <link rel="stylesheet" href="<?= asset('/BS/css/bootstrap.min.css') ?>" />
-  <link rel="stylesheet" href="<?= asset('/fonts/css/font-awesome.min.css') ?>" />
+  <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+  <link rel="stylesheet" href="<?= asset('BS/css/bootstrap.min.css') ?>" />
+  <link rel="stylesheet" href="<?= asset('fonts/css/font-awesome.min.css') ?>" />
 
   <!--  Custom CSS -->
-  <link rel="stylesheet" href="<?= asset('/css/style.css') ?>" />
-  <link rel="stylesheet" href="<?= asset('/css/auth.css') ?>" />
-  <link rel="stylesheet" href="<?= asset('/css/article.css') ?>" />
-
+  <link rel="stylesheet" href="<?= asset('css/style.css') ?>" />
+  <link rel="stylesheet" href="<?= asset('css/auth.css') ?>" />
+  <link rel="stylesheet" href="<?= asset('css/article.css') ?>" />
 
   <title>{{ $title }}</title>
 </head>
@@ -45,11 +44,11 @@
   </div>
 
   <!-- Templates Javascript -->
-  <script src="{{ asset('/js/jquery-3.5.1.min.js') }} "></script>
-  <script src="{{ asset('/BS/js/bootstrap.bundle.min.js') }} "></script>
+  <script src="{{ asset('js/jquery-3.5.1.min.js') }} "></script>
+  <script src="{{ asset('BS/js/bootstrap.bundle.min.js') }} "></script>
 
   <!-- Custom Javascript -->
-  <script src="{{ asset('/js/script.js') }}"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
   <script src="/js/app.js"></script>
 </body>
 
