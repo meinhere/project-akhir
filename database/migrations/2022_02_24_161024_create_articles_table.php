@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
             $table->string('image')->nullable();
             $table->text('excerpt');
             $table->text('body');
+            $table->integer('read_count');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
         });

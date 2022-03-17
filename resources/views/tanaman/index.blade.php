@@ -13,8 +13,7 @@
             {{-- @if ($plant->image)
               <img src="{{ asset('storage/' . $plant->image) }}" class="card-img-top" alt="{{ $plant->title }}">
             @else --}}
-            <img src="img/artikel/{{ $plant->image }}" class="card-img-top rounded-3" alt="{{ $plant->name }}"
-              height="150">
+            <img src="storage/{{ $plant->image }}" class="card-img-top rounded-3" alt="{{ $plant->name }}">
             {{-- @endif --}}
             <div class="card-body">
               <h6 class="card-text">Nama Tanaman : <strong>{{ $plant->name }}</strong></h6>

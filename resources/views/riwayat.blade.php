@@ -3,7 +3,7 @@
 @section('content')
   @if (auth()->check())
     <div class="page-articles">
-      <h2 class="text-center mt-4">Belum ada riwayat..</h2>
+      <h4 class="text-center mt-4">Belum ada riwayat..</h4>
     </div>
   @else
     <div class="page-articles">

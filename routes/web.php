@@ -3,7 +3,6 @@
 use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ServiceController;
@@ -27,6 +26,8 @@ use App\Http\Controllers\DashboardCategoryController;
 */
 
 Route::get('/', [MainController::class, 'index']);
+Route::get('/fetch-new', [MainController::class, 'fetchNews']);
+Route::get('/fetch-popular', [MainController::class, 'fetchPopulars']);
 Route::get('/dashboard', [MainController::class, 'dashboard']);
 Route::get('/riwayat', [MainController::class, 'riwayat']);
 Route::get('/footer/{footer:slug}', [MainController::class, 'footer']);
@@ -40,6 +41,7 @@ Route::post('/logout', [AuthController::class, 'logout']);
 // Route::get('/register-petani', [AuthController::class, 'registerPetani'])->middleware('guest');
 
 Route::get('/artikel', [ArtikelController::class, 'index']);
+Route::post('/artikel/comment', [ArtikelController::class, 'comment']);
 Route::get('/artikel/{article:slug}', [ArtikelController::class, 'show']);
 
 Route::get('/kategori/{category:slug}', [CategoryController::class, 'show']);

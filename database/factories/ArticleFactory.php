@@ -21,7 +21,9 @@ class ArticleFactory extends Factory
             'slug'  => $this->faker->slug(),
             'body'  => $this->faker->paragraph(mt_rand(15, 25)),
             'excerpt' => Str::limit($excerpt, 200, '...'),
-            'user_id' => mt_rand(1, 5),
+            'image' => 'article-images/' . mt_rand(1, 5) . '.jpg',
+            'read_count' => 0,
+            'user_id' => mt_rand(2, 8),
             'category_id' => mt_rand(1, 4)
         ];
     }

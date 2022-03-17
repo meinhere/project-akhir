@@ -10,12 +10,7 @@
       @foreach ($tools as $tool)
         <div class="col-6 col-md-4 col-lg-3 mb-3">
           <div class="card">
-            {{-- @if ($plant->image)
-              <img src="{{ asset('storage/' . $plant->image) }}" class="card-img-top" alt="{{ $plant->title }}">
-            @else --}}
-            <img src="img/artikel/{{ $tool->image }}" class="card-img-top rounded-3" alt="{{ $tool->name }}"
-              height="150">
-            {{-- @endif --}}
+            <img src="storage/{{ $tool->image }}" class="card-img-top rounded-3" alt="{{ $tool->name }}">
             <div class="card-body">
               <h6 class="card-text">Nama Alat : <strong>{{ $tool->name }}</strong></h6>
               <span>

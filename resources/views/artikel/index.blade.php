@@ -17,7 +17,7 @@
     </form>
     @if ($articles->count())
       <div class="articles-header mt-5">
-        <h2>Artikel Terbaru</h2>
+        <h2 class="fw-bold">Artikel Terbaru</h2>
         <div class="row mt-3">
           <div class="col-12 col-lg-7">
             <div class="card bg-dark text-white">
@@ -25,32 +25,34 @@
                 <img src="{{ asset('storage/' . $newArticle[0]->image) }}" class="img-thumbnail"
                   alt="{{ $newArticle[0]->title }}">
               @else
-                <img src="img/artikel/1.jpg" class="card-img" alt="{{ $newArticle[0]->title }}">
+                <img src="storage/article-images/default-article.jpg" class="img-thumbnail"
+                  alt="{{ $newArticle[0]->title }}">
               @endif
               <div class="card-img-overlay">
-                <h2 class="card-title"><a href="/artikel/{{ $newArticle[0]->slug }}"
+                <h4 class="card-title"><a href="/artikel/{{ $newArticle[0]->slug }}"
                     class="text-white text-decoration-none text-uppercase">
-                    {{ $newArticle[0]->title }}</a></h2>
+                    {{ $newArticle[0]->title }}</a></h4>
               </div>
             </div>
           </div>
           <div class="col-12 col-lg-5">
             <div class="row article-populer">
-              @foreach ($articles->take(5) as $article)
+              @foreach ($popularArticles->sortByDesc('read_count')->take(5) as $pop_article)
                 <div class="card mb-3 card-populer w-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      @if ($article->image)
-                        <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid rounded-start"
-                          alt="{{ $article->title }}">
+                      @if ($pop_article->image)
+                        <img src="{{ asset('storage/' . $pop_article->image) }}" class="img-fluid rounded-start"
+                          alt="{{ $pop_article->title }}" width="125">
                       @else
-                        <img src="img/artikel/2.jpg" class="img-fluid rounded-start" alt="{{ $article->title }}">
+                        <img src="storage/article-images/default-article.jpg" class="img-fluid rounded-start"
+                          alt="{{ $pop_article->title }}">
                       @endif
                     </div>
                     <div class="col-8">
                       <div class="card-body card-subjudul">
-                        <h6 class="card-title"><a href="/artikel/{{ $article->slug }}"
-                            class="text-dark text-decoration-none">{{ Str::limit($article->title, 65, '...') }}</a>
+                        <h6 class="card-title"><a href="/artikel/{{ $pop_article->slug }}"
+                            class="text-dark text-decoration-none">{{ Str::limit($pop_article->title, 65, '...') }}</a>
                         </h6>
                       </div>
                     </div>
@@ -62,10 +64,10 @@
         </div>
       </div>
       <div class="articles-body mt-5">
-        @if ($articles->count() >= 6)
+        @if ($articles->count())
           <div class="row">
             <div class="col-8">
-              <h2>100+ Artikel Lainnya</h2>
+              <h2 class="fw-bold">100+ Artikel Lainnya</h2>
             </div>
             <div class="col-4 d-flex justify-content-end">
               {{ $articles->links() }}
@@ -73,14 +75,15 @@
           </div>
         @endif
         <div class="row mt-4 d-flex justify-content-center">
-          @foreach ($articles->slice(6) as $article)
+          @foreach ($articles->whereNotIn('slug', $newArticle[0]->slug) as $article)
             <div class="col-12 col-md-6 col-lg-3 mb-3">
               <div class="card">
                 @if ($article->image)
                   <img src="{{ asset('storage/' . $article->image) }}" class="card-img-top"
                     alt="{{ $article->title }}">
                 @else
-                  <img src="img/artikel/3.jpg" class="card-img-top" alt="{{ $article->title }}">
+                  <img src="storage/article-images/default-article.jpg" class="card-img-top"
+                    alt="{{ $article->title }}">
                 @endif
                 <div class="card-body">
                   <button class=" btn-sm mb-3 btn-kategori">
@@ -102,4 +105,5 @@
     @endif
   </div>
   <!---->
+  </script>
 @endsection

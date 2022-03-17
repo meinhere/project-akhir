@@ -2,7 +2,7 @@
   <div class="container-fluid mb-5">
     <div class="row no-gutters">
       <div class="col-12 col-md-3 footer-brand">
-        <img src="{{ URL('/img/brand.png') }}" alt="Footer Brand">
+        <img src="{{ asset('img/brand.png') }}" alt="Footer Brand">
       </div>
       <div class="col-6 col-md-3 footer-lebih">
         <p class="footer-head">Lebih Lanjut</p>

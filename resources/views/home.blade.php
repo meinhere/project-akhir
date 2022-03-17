@@ -67,23 +67,28 @@
           </div>
           <div class="article-body">
             <div class="article-body_title">
-              <div class="article-body_title-btn selected">Terbaru</div>
+              <div class="article-body_title-btn btn-new selected" onclick="news()">Terbaru
+              </div>
             </div>
             <div class="article-body_title">
-              <div class="article-body_title-btn">Populer</div>
+              <div class="article-body_title-btn btn-popular" onclick="popular()">Populer</div>
             </div>
             <!---->
           </div>
           <div class="article-content">
             <section class="article-content_detail">
-              @foreach ($articles->take(7) as $article)
+              {{-- @foreach ($articles->take(7) as $article)
                 <div class="article-content_detail-layout">
                   <a href="/artikel/{{ $article->slug }}">
                     <article-list-item>
                       <!---->
                       <section class="article-card">
                         <figure tabindex="0">
-                          <img src="/img/artikel/1.jpg" />
+                          @if ($article->image)
+                            <img src="storage/{{ $article->image }}" alt="{{ $article->title }}" />
+                          @else
+                            <img src="storage/article-images/default-article.jpg" alt="{{ $article->title }}">
+                          @endif
                         </figure>
                         <span class="body-container" tabindex="0">
                           <div>
@@ -105,11 +110,9 @@
                     </article-list-item>
                   </a>
                 </div>
-              @endforeach
-              <!---->
+              @endforeach --}}
               <!---->
             </section>
-            <!---->
             <!---->
           </div>
         </div>
@@ -119,5 +122,112 @@
     <!---->
   </div>
   <!---->
-  <script src="/js/app.js"></script>
+  <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
+  <script>
+    const btnNew = document.querySelector('.btn-new');
+    const btnPopular = document.querySelector('.btn-popular');
+    const inputHide = document.querySelector('.popular-hide');
+
+    fetchNews();
+
+    function popular() {
+      btnNew.classList.remove('selected');
+      btnPopular.classList.add('selected');
+      fetchPopulars();
+    }
+
+    function news() {
+      btnNew.classList.add('selected');
+      btnPopular.classList.remove('selected');
+      fetchNews();
+    }
+
+    function fetchNews() {
+      $.ajax({
+        type: 'GET',
+        url: '/fetch-new',
+        dataType: 'json',
+        success: function(response) {
+          $('.article-content_detail').html("");
+          $.each(response.news, function(key, item) {
+            $('.article-content_detail').append(
+              `<div class="article-content_detail-layout">
+                <a href="/artikel/${ item.slug }">
+                  <article-list-item>
+                    <!---->
+                    <section class="article-card">
+                      <figure tabindex="0">
+                        <img src="storage/${ item.image ?? 'article-images/default-article.jpg' }" alt="${ item.title }" />
+                      </figure>
+                      <span class="body-container" tabindex="0">
+                        <div>
+                          <header><a href="/artikel/${ item.slug }"
+                              class="fs-5 text-decoration-none">${ item.title }</a></header>
+                        </div>
+                      </span>
+                      <div class="tag-container ellipsis">
+                        <span class="tag-container_name">
+                          <div class="dot"></div>
+                          <a href="/kategori/${ item.category.slug }"> ${ item.category.name } </a>
+                          <!---->
+                        </span>
+                        <!---->
+                      </div>
+                      <!---->
+                    </section>
+                    <!---->
+                  </article-list-item>
+                </a>
+              </div>`
+            );
+          });
+        }
+      });
+    }
+
+    function fetchPopulars() {
+      $.ajax({
+        type: 'GET',
+        url: '/fetch-popular',
+        dataType: 'json',
+        success: function(response) {
+          console.log(response.populars);
+          $('.article-content_detail').html("");
+          $.each(response.populars, function(key, item) {
+            $('.article-content_detail').append(
+              `<div class="article-content_detail-layout">
+                <a href="/artikel/${ item.slug }">
+                  <article-list-item>
+                    <!---->
+                    <section class="article-card">
+                      <figure tabindex="0">
+                        <img src="storage/${ item.image ?? 'article-images/default-article.jpg' }" alt="${ item.title }" />
+                      </figure>
+                      <span class="body-container" tabindex="0">
+                        <div>
+                          <header><a href="/artikel/${ item.slug }"
+                              class="fs-5 text-decoration-none">${ item.title }</a></header>
+                        </div>
+                      </span>
+                      <div class="tag-container ellipsis">
+                        <span class="tag-container_name">
+                          <div class="dot"></div>
+                          <a href="/kategori/${ item.category.slug }"> ${ item.category.name } </a>
+                          <!---->
+                        </span>
+                        <!---->
+                      </div>
+                      <!---->
+                    </section>
+                    <!---->
+                  </article-list-item>
+                </a>
+              </div>`
+            );
+          });
+        }
+      });
+    }
+  </script>
 @endsection

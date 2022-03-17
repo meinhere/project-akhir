@@ -373,10 +373,6 @@ button {
     background-color: #058501;
     color: #fff;
 }
-.article-content {
-    display: flex;
-    flex-direction: row;
-}
 .article-content_detail {
     display: flex;
     overflow-x: scroll;

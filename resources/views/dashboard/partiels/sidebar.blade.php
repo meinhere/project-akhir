@@ -6,7 +6,7 @@
     </a>
   </div>
   <ul class="sidebar-menu do-nicescrol">
-    <li class="sidebar-header">MAIN NAVIGATION</li>
+    <li class="sidebar-header">MAIN DASHBOARD</li>
     <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
       <a href="/dashboard">
         <div class="d-flex">
@@ -28,6 +28,7 @@
         <div class="d-flex">
           <i class="fa fa-comments-o"></i>
           <span>Halaman Chat</span>
+          <small class="badge badge-light ml-5">New</small>
         </div>
       </a>
     </li>

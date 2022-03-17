@@ -12,12 +12,8 @@
           @foreach ($prices as $price)
             <div class="col-6 col-lg-4 mb-3">
               <div class="card">
-                {{-- @if ($plant->image)
-              <img src="{{ asset('storage/' . $plant->image) }}" class="card-img-top" alt="{{ $plant->title }}">
-            @else --}}
-                <img src="img/artikel/{{ $price->plant->image }}" class="card-img-top rounded-3"
-                  alt="{{ $price->plant->name }}" height="150">
-                {{-- @endif --}}
+                <img src="storage/{{ $price->plant->image }}" class="card-img-top rounded-3"
+                  alt="{{ $price->plant->name }}">
                 <div class="card-body">
                   <h4 class="card-title text-center">{{ $price->plant->name }}</h4>
                   @if ($price->harga_baru > $price->harga_lama)

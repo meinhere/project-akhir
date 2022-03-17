@@ -37,6 +37,13 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role' => 'Petani'
         ]);
+        User::create([
+            'name' => 'M Afif Fadhlurrohman',
+            'username' => 'mafif',
+            'email' => 'mafif176@gmail.com',
+            'password' => bcrypt('password'),
+            'role' => 'User'
+        ]);
 
         User::factory(5)->create();
 
@@ -105,47 +112,49 @@ class DatabaseSeeder extends Seeder
         Footer::create([
             'title' => 'Latar Belakang',
             'slug' => 'latar-belakang',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eveniet impedit maiores est dolor rem laborum culpa fuga assumenda. Sequi perspiciatis aliquid nam officia dolorem cupiditate adipisci accusamus aperiam quos consequatur enim cum quis tempore qui officiis laudantium explicabo, asperiores voluptatibus vel, nobis sed ducimus. Consectetur, sapiente. Quaerat illum incidunt magni odit at? Unde, nesciunt rerum? Mollitia ex ipsa fugiat laboriosam iste? Rerum fuga totam impedit atque voluptatum commodi error quis et corrupti mollitia exercitationem maxime eligendi velit, repellat nobis non, optio beatae harum facere ad! Ipsa odit possimus dicta voluptas dolor at, totam repudiandae quod eligendi aspernatur, consequatur veniam voluptate provident delectus non accusamus autem a similique ipsam sed corrupti magnam saepe voluptates? Dolore at eligendi quisquam minima id dolores culpa sunt voluptas, beatae rerum delectus earum est exercitationem suscipit nesciunt tempore? Odio nisi doloribus, natus ratione impedit aperiam sapiente quod fuga obcaecati dicta ab animi debitis voluptate ut odit totam laborum minima, quia mollitia eius accusantium porro nam, fugit sit. Laborum consequuntur possimus officia odio distinctio magnam tempore ut quos laboriosam. Reiciendis, consequuntur quae. Perspiciatis, reiciendis explicabo odio debitis quisquam tempore cumque, quam nam iure ea nobis rerum, cum aliquam qui. Eveniet, vero. Voluptatum, tempora cum. Impedit iste sed veniam possimus, vero ex nesciunt harum quam ipsam aperiam tempore nam dolorum. Eaque illo dolores hic, error vitae quibusdam nostrum delectus explicabo blanditiis! Est a sint sunt libero enim dicta nihil quos eum aspernatur beatae officiis, suscipit consequatur, laudantium accusantium amet voluptates, exercitationem porro fuga. Necessitatibus provident nesciunt deleniti deserunt reprehenderit blanditiis officia corporis vel quisquam suscipit impedit assumenda at dolorum dolore fuga nobis voluptas doloremque, dolor minima libero maiores ab fugit! Magnam, illo fuga! Voluptas quisquam dicta cumque, labore harum sit repellendus debitis eius repellat voluptate iusto. Iste, sapiente, veniam sequi, nemo ratione aspernatur quaerat laboriosam eveniet obcaecati ducimus culpa temporibus. Explicabo numquam quisquam ad sed nesciunt dolorem quasi itaque omnis molestias! Repellendus debitis facere vero architecto ullam impedit iure blanditiis temporibus libero, deleniti animi ab consequatur molestias pariatur assumenda, nam placeat enim nesciunt facilis voluptatem praesentium quaerat delectus nostrum. Rem consequuntur, explicabo necessitatibus pariatur illo odit vel sequi fuga unde voluptatibus voluptatem ducimus illum eveniet ex fugiat suscipit. Expedita eveniet placeat sit, nisi dicta corrupti! Delectus commodi atque unde! Rem facilis quibusdam possimus veritatis, beatae ab nulla porro velit consequatur ex! Autem nisi ducimus alias porro aperiam itaque repudiandae quasi commodi reiciendis atque? Qui placeat inventore in.'
+            'body' => '<p>Website adalah salah satu media yang paling sering di akses dan digunakan  dalam mencari berbagai informasi dan sarana komunikasi, tentu saja dari berbagai website yang tersedia memiliki fungsi dan fitur yang berbeda pula.</p>
+            <p>Untuk saat ini forum perkebunan masih sangat minim dikarenakan masih banyak diluar sana perkembangan di bidang perkebunan masih belum berkembang pesat sehingga kami mencoba untuk mengembangkan sebuah website.</p>
+            <p>Didalam website, kami mencoba untuk menyelesaikan masalah dibidang perkebunan, dari bagaimana cara merawat tanaman, peralatan dan kebutuhan apa saja yang dibutuhkan untuk perkebunan, juga bagaimana mempercepat tanaman dan untuk merawat atau mengobati yang baik dalam perkebunan.</p>'
         ]);
         Footer::create([
             'title' => 'Tentang Kami',
             'slug' => 'tentang-kami',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eveniet impedit maiores est dolor rem laborum culpa fuga assumenda. Sequi perspiciatis aliquid nam officia dolorem cupiditate adipisci accusamus aperiam quos consequatur enim cum quis tempore qui officiis laudantium explicabo, asperiores voluptatibus vel, nobis sed ducimus. Consectetur, sapiente. Quaerat illum incidunt magni odit at? Unde, nesciunt rerum? Mollitia ex ipsa fugiat laboriosam iste? Rerum fuga totam impedit atque voluptatum commodi error quis et corrupti mollitia exercitationem maxime eligendi velit, repellat nobis non, optio beatae harum facere ad! Ipsa odit possimus dicta voluptas dolor at, totam repudiandae quod eligendi aspernatur, consequatur veniam voluptate provident delectus non accusamus autem a similique ipsam sed corrupti magnam saepe voluptates? Dolore at eligendi quisquam minima id dolores culpa sunt voluptas, beatae rerum delectus earum est exercitationem suscipit nesciunt tempore? Odio nisi doloribus, natus ratione impedit aperiam sapiente quod fuga obcaecati dicta ab animi debitis voluptate ut odit totam laborum minima, quia mollitia eius accusantium porro nam, fugit sit. Laborum consequuntur possimus officia odio distinctio magnam tempore ut quos laboriosam. Reiciendis, consequuntur quae. Perspiciatis, reiciendis explicabo odio debitis quisquam tempore cumque, quam nam iure ea nobis rerum, cum aliquam qui. Eveniet, vero. Voluptatum, tempora cum. Impedit iste sed veniam possimus, vero ex nesciunt harum quam ipsam aperiam tempore nam dolorum. Eaque illo dolores hic, error vitae quibusdam nostrum delectus explicabo blanditiis! Est a sint sunt libero enim dicta nihil quos eum aspernatur beatae officiis, suscipit consequatur, laudantium accusantium amet voluptates, exercitationem porro fuga. Necessitatibus provident nesciunt deleniti deserunt reprehenderit blanditiis officia corporis vel quisquam suscipit impedit assumenda at dolorum dolore fuga nobis voluptas doloremque, dolor minima libero maiores ab fugit! Magnam, illo fuga! Voluptas quisquam dicta cumque, labore harum sit repellendus debitis eius repellat voluptate iusto. Iste, sapiente, veniam sequi, nemo ratione aspernatur quaerat laboriosam eveniet obcaecati ducimus culpa temporibus. Explicabo numquam quisquam ad sed nesciunt dolorem quasi itaque omnis molestias! Repellendus debitis facere vero architecto ullam impedit iure blanditiis temporibus libero, deleniti animi ab consequatur molestias pariatur assumenda, nam placeat enim nesciunt facilis voluptatem praesentium quaerat delectus nostrum. Rem consequuntur, explicabo necessitatibus pariatur illo odit vel sequi fuga unde voluptatibus voluptatem ducimus illum eveniet ex fugiat suscipit. Expedita eveniet placeat sit, nisi dicta corrupti! Delectus commodi atque unde! Rem facilis quibusdam possimus veritatis, beatae ab nulla porro velit consequatur ex! Autem nisi ducimus alias porro aperiam itaque repudiandae quasi commodi reiciendis atque? Qui placeat inventore in.'
+            'body' => 'Jago kebun adalah sebuah website untuk mengedukasi bidang perkebunan, baik cara merawat tanaman sampai kebutuhan apa saja dalam perkebunan dan dibantu oleh pakar-pakar yang ahli di bidang perkebunan.'
         ]);
         Footer::create([
             'title' => 'Referensi',
             'slug' => 'referensi',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eveniet impedit maiores est dolor rem laborum culpa fuga assumenda. Sequi perspiciatis aliquid nam officia dolorem cupiditate adipisci accusamus aperiam quos consequatur enim cum quis tempore qui officiis laudantium explicabo, asperiores voluptatibus vel, nobis sed ducimus. Consectetur, sapiente. Quaerat illum incidunt magni odit at? Unde, nesciunt rerum? Mollitia ex ipsa fugiat laboriosam iste? Rerum fuga totam impedit atque voluptatum commodi error quis et corrupti mollitia exercitationem maxime eligendi velit, repellat nobis non, optio beatae harum facere ad! Ipsa odit possimus dicta voluptas dolor at, totam repudiandae quod eligendi aspernatur, consequatur veniam voluptate provident delectus non accusamus autem a similique ipsam sed corrupti magnam saepe voluptates? Dolore at eligendi quisquam minima id dolores culpa sunt voluptas, beatae rerum delectus earum est exercitationem suscipit nesciunt tempore? Odio nisi doloribus, natus ratione impedit aperiam sapiente quod fuga obcaecati dicta ab animi debitis voluptate ut odit totam laborum minima, quia mollitia eius accusantium porro nam, fugit sit. Laborum consequuntur possimus officia odio distinctio magnam tempore ut quos laboriosam. Reiciendis, consequuntur quae. Perspiciatis, reiciendis explicabo odio debitis quisquam tempore cumque, quam nam iure ea nobis rerum, cum aliquam qui. Eveniet, vero. Voluptatum, tempora cum. Impedit iste sed veniam possimus, vero ex nesciunt harum quam ipsam aperiam tempore nam dolorum. Eaque illo dolores hic, error vitae quibusdam nostrum delectus explicabo blanditiis! Est a sint sunt libero enim dicta nihil quos eum aspernatur beatae officiis, suscipit consequatur, laudantium accusantium amet voluptates, exercitationem porro fuga. Necessitatibus provident nesciunt deleniti deserunt reprehenderit blanditiis officia corporis vel quisquam suscipit impedit assumenda at dolorum dolore fuga nobis voluptas doloremque, dolor minima libero maiores ab fugit! Magnam, illo fuga! Voluptas quisquam dicta cumque, labore harum sit repellendus debitis eius repellat voluptate iusto. Iste, sapiente, veniam sequi, nemo ratione aspernatur quaerat laboriosam eveniet obcaecati ducimus culpa temporibus. Explicabo numquam quisquam ad sed nesciunt dolorem quasi itaque omnis molestias! Repellendus debitis facere vero architecto ullam impedit iure blanditiis temporibus libero, deleniti animi ab consequatur molestias pariatur assumenda, nam placeat enim nesciunt facilis voluptatem praesentium quaerat delectus nostrum. Rem consequuntur, explicabo necessitatibus pariatur illo odit vel sequi fuga unde voluptatibus voluptatem ducimus illum eveniet ex fugiat suscipit. Expedita eveniet placeat sit, nisi dicta corrupti! Delectus commodi atque unde! Rem facilis quibusdam possimus veritatis, beatae ab nulla porro velit consequatur ex! Autem nisi ducimus alias porro aperiam itaque repudiandae quasi commodi reiciendis atque? Qui placeat inventore in.'
+            'body' => 'Kami mengambil referensi website kami dari www.halodoc.com, fiture yang akan kami adopsi antaralain home page, chat via artikel, chat online melalui fiture konsultasi. Alasan kami mengambil referensi dari website tersebut, kami rasa sangat sesuai dengan konsep website yang akan kami kembangkan.'
         ]);
         Footer::create([
             'title' => 'Biodata',
             'slug' => 'biodata',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eveniet impedit maiores est dolor rem laborum culpa fuga assumenda. Sequi perspiciatis aliquid nam officia dolorem cupiditate adipisci accusamus aperiam quos consequatur enim cum quis tempore qui officiis laudantium explicabo, asperiores voluptatibus vel, nobis sed ducimus. Consectetur, sapiente. Quaerat illum incidunt magni odit at? Unde, nesciunt rerum? Mollitia ex ipsa fugiat laboriosam iste? Rerum fuga totam impedit atque voluptatum commodi error quis et corrupti mollitia exercitationem maxime eligendi velit, repellat nobis non, optio beatae harum facere ad! Ipsa odit possimus dicta voluptas dolor at, totam repudiandae quod eligendi aspernatur, consequatur veniam voluptate provident delectus non accusamus autem a similique ipsam sed corrupti magnam saepe voluptates? Dolore at eligendi quisquam minima id dolores culpa sunt voluptas, beatae rerum delectus earum est exercitationem suscipit nesciunt tempore? Odio nisi doloribus, natus ratione impedit aperiam sapiente quod fuga obcaecati dicta ab animi debitis voluptate ut odit totam laborum minima, quia mollitia eius accusantium porro nam, fugit sit. Laborum consequuntur possimus officia odio distinctio magnam tempore ut quos laboriosam. Reiciendis, consequuntur quae. Perspiciatis, reiciendis explicabo odio debitis quisquam tempore cumque, quam nam iure ea nobis rerum, cum aliquam qui. Eveniet, vero. Voluptatum, tempora cum. Impedit iste sed veniam possimus, vero ex nesciunt harum quam ipsam aperiam tempore nam dolorum. Eaque illo dolores hic, error vitae quibusdam nostrum delectus explicabo blanditiis! Est a sint sunt libero enim dicta nihil quos eum aspernatur beatae officiis, suscipit consequatur, laudantium accusantium amet voluptates, exercitationem porro fuga. Necessitatibus provident nesciunt deleniti deserunt reprehenderit blanditiis officia corporis vel quisquam suscipit impedit assumenda at dolorum dolore fuga nobis voluptas doloremque, dolor minima libero maiores ab fugit! Magnam, illo fuga! Voluptas quisquam dicta cumque, labore harum sit repellendus debitis eius repellat voluptate iusto. Iste, sapiente, veniam sequi, nemo ratione aspernatur quaerat laboriosam eveniet obcaecati ducimus culpa temporibus. Explicabo numquam quisquam ad sed nesciunt dolorem quasi itaque omnis molestias! Repellendus debitis facere vero architecto ullam impedit iure blanditiis temporibus libero, deleniti animi ab consequatur molestias pariatur assumenda, nam placeat enim nesciunt facilis voluptatem praesentium quaerat delectus nostrum. Rem consequuntur, explicabo necessitatibus pariatur illo odit vel sequi fuga unde voluptatibus voluptatem ducimus illum eveniet ex fugiat suscipit. Expedita eveniet placeat sit, nisi dicta corrupti! Delectus commodi atque unde! Rem facilis quibusdam possimus veritatis, beatae ab nulla porro velit consequatur ex! Autem nisi ducimus alias porro aperiam itaque repudiandae quasi commodi reiciendis atque? Qui placeat inventore in.'
+            'body' => '<div><p>Abid Fawwaz Naufal</p><a href="https://lynk.id/abidey_08" >https://lynk.id/abidey_08</a></div><div class="mt-4"><p>M. Afif Fadlurrohman Najib</p><a href="https://lynk.id/mafiffadhlurrohman" >https://lynk.id/mafiffadhlurrohman</a></div><div class="mt-4"><p>Sabil Ahmad Hidayat</p><a href="https://lynk.id/sabil_ahmad11" >https://lynk.id/sabil_ahmad11</a></div>'
         ]);
 
         Plant::create([
             'name' => 'Lombok',
             'plant_category_id' => 1,
             'detail' => 'Lombok adalah sayuran dengan ciri khas akan pedasnya. Sayuran ini seringkali dipakai untuk membuat sambal.',
-            'image' => '1.jpg'
+            'image' => 'plant-images/1.jpg'
         ]);
         Plant::create([
             'name' => 'Terong',
             'plant_category_id' => 1,
             'detail' => 'Terong adalah jenis sayuran yang memiliki bentuk unik dengan warna ungu sebagai warna ciri khasnya.',
-            'image' => '1.jpg'
+            'image' => 'plant-images/2.jpg'
         ]);
         Plant::create([
             'name' => 'Anggrek',
             'plant_category_id' => 2,
             'detail' => 'Anggrek adalah tanaman hias dengan tingkat kepopulerannya yang sangat banyak di Indonesia.',
-            'image' => '3.jpg'
+            'image' => 'plant-images/3.jpg'
         ]);
         Plant::create([
             'name' => 'Mangga',
             'plant_category_id' => 3,
             'detail' => 'Mangga merupakan salah satu buah yang paling diminati oleh warga karena manis dan lezatnya.',
-            'image' => '5.jpg'
+            'image' => 'plant-images/4.jpg'
         ]);
 
         PlantCategory::create([
@@ -168,19 +177,19 @@ class DatabaseSeeder extends Seeder
 
         Tool::create([
             'name' => 'Cetok',
-            'image' => '1.jpg'
+            'image' => 'tool-images/1.jpg'
         ]);
         Tool::create([
-            'name' => 'Bambu Kecil',
-            'image' => '2.jpg'
+            'name' => 'Ember',
+            'image' => 'tool-images/2.jpg'
         ]);
         Tool::create([
             'name' => 'Penyiram Air',
-            'image' => '3.jpg'
+            'image' => 'tool-images/3.jpg'
         ]);
         Tool::create([
-            'name' => 'Cangkul',
-            'image' => '4.jpg'
+            'name' => 'Sarung Tangan',
+            'image' => 'tool-images/4.jpg'
         ]);
 
         Price::create([
